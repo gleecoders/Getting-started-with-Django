@@ -2,8 +2,9 @@ from django.db import models
 
 
 class User(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    first_name = models.CharField("the person's first name", max_length=30)
+    last_name = models.CharField("the person's last name", max_length=30)
+    cars = models.ManyToManyField('Car', verbose_name="the user's cars")
 
 
 STATUS_CHOICES = (
